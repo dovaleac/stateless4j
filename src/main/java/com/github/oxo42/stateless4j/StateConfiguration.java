@@ -5,9 +5,14 @@ import com.github.oxo42.stateless4j.transitions.Transition;
 import com.github.oxo42.stateless4j.transitions.TransitioningTriggerBehaviour;
 import com.github.oxo42.stateless4j.triggers.*;
 
-import static com.github.oxo42.stateless4j.Settings.*;
-
 public class StateConfiguration<S, T> {
+    private static final String GUARD_IS_NULL = "guard is null";
+    private static final String ENTRY_ACTION_IS_NULL = "entryAction is null";
+    private static final String EXIT_ACTION_IS_NULL = "exitAction is null";
+    private static final String ACTION_IS_NULL = "action is null";
+    private static final String TRIGGER_IS_NULL = "trigger is null";
+    private static final String DESTINATION_STATE_SELECTOR_IS_NULL = "destinationStateSelector is null";
+
     private static final FuncBoolean NO_GUARD = new FuncBoolean() {
         @Override
         public boolean call() {
@@ -103,7 +108,7 @@ public class StateConfiguration<S, T> {
      * @param guard            Function that must return true in order for the trigger to be accepted
      * @return The receiver
      */
-    public StateConfiguration<S, T> permitIfOtherwiseIgnore(T trigger, S destinationState, final FuncBoolean guard) {
+    public StateConfiguration<S, T> permitIfElseIgnore(T trigger, S destinationState, final FuncBoolean guard) {
         enforceNotIdentityTransition(destinationState);
         ignoreIf(trigger, new FuncBoolean() {
             @Override
@@ -127,7 +132,7 @@ public class StateConfiguration<S, T> {
      * @param action           The action to be performed "during" transition
      * @return The receiver
      */
-    public StateConfiguration<S, T> permitIfOtherwiseIgnore(T trigger, S destinationState, final FuncBoolean guard, Action action) {
+    public StateConfiguration<S, T> permitIfElseIgnore(T trigger, S destinationState, final FuncBoolean guard, Action action) {
         enforceNotIdentityTransition(destinationState);
         ignoreIf(trigger, new FuncBoolean() {
             @Override

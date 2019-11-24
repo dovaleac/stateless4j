@@ -2,13 +2,13 @@ Maven
 =====
 ```xml
     <dependency>
-        <groupId>com.github.oxo42</groupId>
+        <groupId>com.github.stateless4j</groupId>
         <artifactId>stateless4j</artifactId>
-        <version>2.5.0</version>
+        <version>2.6.0</version>
     </dependency>
 ```
 
-[![Build Status](https://travis-ci.org/oxo42/stateless4j.svg?branch=master)](https://travis-ci.org/oxo42/stateless4j)
+[![Build Status](https://api.travis-ci.org/stateless4j/stateless4j.svg?branch=master)](https://travis-ci.org/stateless4j/stateless4j)
 
 Introduction
 ============
@@ -112,7 +112,6 @@ License
 =======
 Apache 2.0 License
 
-
 Created by [@oxo42](https://github.com/oxo42)
 
-Maintained by [@Ktar5](https://github.com/ktar5)
+Maintained by Chris Narkiewicz [@ezaquarii](https://github.com/ezaquarii)
